@@ -1,0 +1,29 @@
+.wrapper
+  max-width: $pageWidth
+  padding:
+    left: $gap / 2
+    right: $gap / 2
+  margin: 0 auto
+.wrapper-full-width
+  max-width: unset
+.row
+  display: flex
+  flex-wrap: wrap
+  margin-left: $gap / 2 * -1
+  margin-right: $gap / 2 * -1
+.column
+  width: 100%
+  padding:
+    left: $gap / 2
+    right: $gap / 2
+  &_nogap
+    padding-left: 0
+    padding-right: 0
+@each $breakpoint, $width in $breakpoints
+  @include respond-to($breakpoint)
+    @each $f, $s in $breaks
+      .column-#{$breakpoint}-#{$f}-#{$s}
+        max-width: (100% * $f / $s)
+@for $i from 1 through 7
+  .m-b-#{$vstep*$i}
+    margin-bottom: $vstep * $i * 1px

@@ -1,0 +1,68 @@
+extends ../layouts/simple.layout.pug
+block variables
+  -
+    var pageTitle = "homepage"
+block content
+  include ../components/article.mixin.pug
+  include ../components/service.mixin.pug
+  include ../components/services.list.pug
+  include ../components/timeline.list.pug
+  #start
+    .slider
+      each i in '12345'
+        div
+          .slide.wrapper
+            .slide--title WELCOME TO FREE SKETCH TEMPLATE #{i}
+            .slide--slogan Habitasse vestibulum a mi odio ut rutrum mauris leo lorem #{i}
+  .section.section_dark#about
+    .wrapper
+      +article()
+      .row
+        .column.column-desktop-2-5
+          .content-text.m-b-70
+            h2 About Us
+            p.
+              A posuere scelerisque gravida facilisi parturient magna urna donec parturient per augue a amet quam nullam a ad a. Parturient velit imperdiet in suspendisse eget a parturient adipiscing penatibus convallis himenaeos felis torquent facilisi elementum a penatibus suscipit aliquam.
+            p.
+              Porta at at suspendisse dolor fames ullamcorper cum id per suspendisse a dignissim eu dapibus platea turpis augue mi proin lorem morbi sapien facilisis lectus.
+        .column.column_nogap.column-desktop-3-5
+          .bg-image-wrap
+  .section
+    .wrapper
+      .row
+        .column.column-desktop-3-5.m-b-70
+          .timeline--wrap
+            .timeline
+              each point, index in timePoints
+                .timeline--point( class=index==0?'is-active':'' data-trigger=index)
+                  .timeline--date #{point.year}
+                  .timeline--circle
+                  .timeline--title #{point.title}
+        .column.column-desktop-2-5.m-b-70
+          each point, index in timePoints
+            .timeline-info( data-tab=index)
+              .content-text
+                h2 Timeline #{point.year}
+                p.
+                  A posuere scelerisque gravida facilisi parturient magna urna donec parturient per augue a amet quam nullam a ad a. Parturient velit imperdiet in suspendisse eget a parturient adipiscing penatibus convallis himenaeos felis torquent facilisi elementum a penatibus suscipit aliquam.
+                p.
+                  Porta at at suspendisse dolor fames ullamcorper cum id per suspendisse a dignissim eu dapibus platea turpis augue mi proin lorem morbi sapien facilisis lectus.
+  .section.section_gray#services
+    .wrapper
+      .section--title Our Services
+      .row
+        each service in services
+          .column.column-phablet-1-2.column-laptop-1-3.m-b-70
+            +service(service)
+  .section.section_dark.section_hiring#jobs
+    .wrapper
+      .row
+        .column.column-desktop-2-5
+          .content-text.m-b-70
+            h2 We're Hiring
+            p.
+              A posuere scelerisque gravida facilisi parturient magna urna donec parturient per augue a amet quam nullam a ad a. Parturient velit imperdiet in suspendisse eget a parturient adipiscing penatibus convallis himenaeos felis torquent facilisi elementum a penatibus suscipit aliquam.
+            p.
+              Porta at at suspendisse dolor fames ullamcorper cum id per suspendisse a dignissim eu dapibus platea turpis augue mi proin lorem morbi sapien facilisis lectus.
+        .column.column_nogap.column-desktop-3-5
+          .bg-image-wrap

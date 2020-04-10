@@ -1,0 +1,219 @@
+@import 'reset', 'vars', 'mixins', 'base', 'grid', 'typography', 'icons'
+.service
+  &--icon
+    margin-bottom: 21px
+  &--title
+    @include fslh(20, 26)
+    margin-bottom: 15px
+    font-family: Montserrat, sans-serif
+  &--descr
+    letter-spacing: 0.5px
+    @include fslh(15, 26)
+.section
+  position: relative
+  padding-top: 140px
+  padding-bottom: 70px
+  &_dark
+    color: #fff
+    background: #141720
+    .content-text
+      padding-right: 30px
+      @include respond-to(xlarge)
+        padding-right: 100px
+  &_hiring
+    .row
+      flex-direction: row-reverse
+    .content-text
+      padding-right: 0
+      padding-left: 30px
+      @include respond-to(xlarge)
+        padding-left: 100px
+    .bg-image-wrap
+      background-image: url('../img/hiring.png')
+  &_gray
+    background: #EFEFEF
+  &--title
+    text-align: center
+    font-family: Montserrat, sans-serif
+    letter-spacing: 1px
+    color: #2B2B2B
+    @include fslh(28, 26)
+    margin-bottom: 80px
+  .bg-image-wrap
+    @include respond-to(desktop)
+      margin-top: -140px
+    margin-bottom: -70px
+.bg-image-wrap
+  background: url('../img/about.png')
+  background-size: cover
+  width: 100%
+  padding-top: 100%
+  position: relative
+.timeline
+  display: inline-flex
+  @include respond-to(desktop)
+    flex-direction: column
+    height: 100%
+    margin-top: -140px
+    padding-top: 140px
+  &--wrap
+    overflow: auto
+    @include respond-to(desktop)
+      overflow: unset
+      height: 100%
+  font-weight: bold
+  position: relative
+  &:before
+    content: ''
+    position: absolute
+    top: 50%
+    left: 0
+    right: 0
+    height: 4px
+    margin-top: -2px
+    background: #D4D4D4
+    @include respond-to(desktop)
+      top: 2px
+      bottom: -50px
+      right: auto
+      width: 4px
+      height: auto
+      left: 79px
+  @include fslh(16, 26)
+  &--point
+    display: flex
+    align-items: center
+    white-space: nowrap
+    margin: 0 $gap/2
+    position: relative
+    z-index: 1
+    background: #fff
+    cursor: pointer
+    @include respond-to(desktop)
+      background: none
+      margin-bottom: 50px
+      &:last-child
+        margin-top: auto
+        margin-bottom: 0
+    padding: 0 10px
+    &.is-active
+      .timeline--date
+        color: #C71222
+      .timeline--circle
+        border-color: #C71222
+  &--circle
+    border: 4px solid #D4D4D4
+    width: 16px
+    height: 16px
+    margin: 0 10px
+    border-radius: 50%
+    background: #fff
+.slide
+  height: 100vh
+  padding: 100px 0
+  display: flex
+  flex-direction: column
+  text-align: center
+  &--title
+    margin-top: auto
+    @include fslh(24, 34)
+    @include respond-to(tablet)
+      @include fslh(44, 54)
+    color: #141720
+    font-weight: bold
+    margin-bottom: 16px
+  &--slogan
+    margin-bottom: auto
+    color: #5D5F65
+    @include fslh(25, 60)
+.header
+  padding: 30px 0
+.logo
+  @include fslh(24, 26)
+  font-weight: bold
+.row-header
+  justify-content: space-between
+  align-items: center
+.navbar
+  position: relative
+.burger
+  height: 20px
+  width: 34px
+  display: inline-flex
+  flex-direction: column
+  justify-content: space-between
+  cursor: pointer
+  span
+    height: 15%
+    background: #5D5F65
+.menu
+  position: absolute
+  z-index: 5
+  top: -300px
+  background: #fff
+  right: 0
+  padding: 10px 25px
+  margin-top: 42px
+  transition: .5s ease top
+  &.is-opened
+    top: 100%
+  li
+    margin: 5px 0
+  ul
+    list-style: none
+  a
+    text-decoration: none
+    @include fslh(16, 22)
+    letter-spacing: 0.5px
+    color: #5D5F65
+.bg-image-inner
+  position: absolute
+  top: 0
+  left: 0
+  bottom: 0
+  right: 0
+.header
+  position: fixed
+  left: 0
+  top: 0
+  width: 100%
+  background: #fff
+  z-index: 10
+.slick-arrow
+  position: absolute
+  top: 50%
+  transform: translateY(-50%)
+  height: 50px
+  width: 50px
+  border-radius: 50%
+  background: #3f3f3f
+  left: 10px
+  z-index: 5
+  font-size: 0
+  border: 0
+  display: flex
+  align-items: center
+  justify-content: center
+  &:before
+    content: ''
+    width: 15px
+    height: 15px
+    border-left: 3px solid #fff
+    border-top: 3px solid #fff
+    transform: rotate(-45deg)
+.slick-next
+  left: auto
+  right: 10px
+.slick-dots
+  position: absolute
+  left: 50%
+  transform: translateX(-50%)
+  bottom: 20px
+  display: flex
+  list-style: none
+  button
+    width: 20px
+    height: 20px
+  .slick-active
+    button
+      background: gray

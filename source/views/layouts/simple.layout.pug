@@ -1,0 +1,15 @@
+include ../components/settings.pug
+block variables
+doctype html
+html(lang="uk")
+  head
+    title #{siteName} | #{pageTitle}
+    meta(charset="utf-8") 
+    <meta name="viewport" content="width=device-width">
+    link(rel="stylesheet" href="./css/slick.css")
+    link(rel="stylesheet" href="./css/main.css")
+    
+  body
+    include ../components/navigation.pug
+    block content
+    script(src="./js/main.js")
